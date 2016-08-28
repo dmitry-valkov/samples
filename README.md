@@ -1,0 +1,1 @@
+Just samples of code from any projects or simple FizzBuzz functionality.
