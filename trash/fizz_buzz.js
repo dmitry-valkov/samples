@@ -25,3 +25,32 @@ function gameFizzBuzz(count) {
   }
   
   gameFizzBuzz(100);
+
+  // Wow, stupid separation!
+  function isFizzBuzzNum(num) {
+    return (num % 15 === 0);
+  }
+  
+  function isFizz(num) {
+    return (num % 3 === 0);
+  }
+  
+  function isBuzz(num) {
+    return (num % 5 === 0);
+  }
+  
+  function gameFizzBuzz(count) {
+    for (let i = 1; i <= count; i++) {
+      if (isFizzBuzzNum(i)) {
+        console.log(CONSTANTS.FIZZ_BUZZ);
+      } else if (isBuzz(i)) {
+        console.log('Buzz');
+      } else if (isFizz(i)) {
+        console.log('Fizz');
+      } else {
+        console.log(i);
+      }
+    }
+  }
+  
+  gameFizzBuzz(100);
