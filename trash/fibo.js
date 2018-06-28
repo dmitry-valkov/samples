@@ -18,3 +18,11 @@ function fiboArraySimple(length = 1) {
 
   return result;
 }
+
+function fiboOf(n) {
+  if (n < 2) {
+    return 1;
+  } else {
+    return fiboOf(n - 2) + fiboOf(n - 1);
+  }
+}
