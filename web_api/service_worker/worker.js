@@ -1,19 +1,41 @@
-const CACHE = 'some_cache';
+const CACHE_NAME = 'some_cache';
 const SOURCE_URLS = [
     'main.css',
     'index.js',
 ];
 
-self.addEventListener('install', function (event) {
-    event.waitUntil(
-        caches.open(CACHE)
-            .then(function (cacheInstance) {
-                console.log('Opened cache');
+// create initial cache
+function precache() {
+    return caches.open(CACHE_NAME).then(function (cache) {
+        return cache.addAll(SOURCE_URLS);
+    });
+}
 
-                return cacheInstance.addAll(SOURCE_URLS);
-            })
-            .catch(function (err) {
-                console.error('Cache open failed', err);
-            })
-    );
+function fromCache(request) {
+    return caches.open(CACHE_NAME).then(function (cache) {
+        return cache.match(request).then(function (matching) {
+            return matching || Promise.reject('no-match');
+        });
+    });
+}
+
+function updateCache(request) {
+    return caches.open(CACHE_NAME).then(function (cache) {
+        return fetch(request).then(function (response) {
+            return cache.put(request, response);
+        });
+    });
+}
+
+self.addEventListener('install', function(e) {
+    console.log('The service worker is being installed.');
+
+    e.waitUntil(precache());
+});
+
+self.addEventListener('fetch', function (e) {
+    console.log('The service worker is serving the asset.');
+
+    e.respondWith(fromCache(e.request));
+    e.waitUntil(updateCache(e.request));
 });
