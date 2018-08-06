@@ -1,15 +1,15 @@
 const SW_PATH = './worker.js';
 
 if ('serviceWorker' in navigator) {
-    alert('Service Worker is support :)');
+    console.info('Service Worker is support :)');
 
     window.addEventListener('load', function () {
         navigator.serviceWorker.register(SW_PATH)
             .then(function (registration) {
-                alert(`ServiceWorker registration successful with scope: ${registration.scope}`);
+                console.info(`ServiceWorker registration successful with scope: ${registration.scope}`);
             })
             .catch(function () {
-                alert('ServiceWorker registration failed');
+                console.info('ServiceWorker registration failed');
             });
     })
 } else {
