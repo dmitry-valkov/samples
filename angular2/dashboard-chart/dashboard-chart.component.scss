@@ -1,0 +1,44 @@
+@import "../../../app-server/client/src/app/mixins";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .tab-title {
+    .projects-link{
+      i {
+        font-size: 20px;
+      }
+    }
+
+    .title {
+      @include ellipsis-text();
+
+      max-width: 550px;
+    }
+  }
+
+  .tab-header {
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    margin-bottom: 0.5em;
+
+    .tab-title {
+      margin-bottom: 0;
+    }
+
+    .tab-header__left,
+    .tab-header__right {
+      display: flex;
+      flex: 1 1 50%;
+    }
+
+    .tab-header__right {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+

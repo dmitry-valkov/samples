@@ -1,0 +1,34 @@
+<div class="tab-header">
+  <div class="tab-header__left">
+    <div class="tab-title">{{title}}</div>
+  </div>
+
+  <div class="tab-header__right">
+    <projects-sorting (onSortChanged)="onSortChanged($event)"></projects-sorting>
+  </div>
+</div>
+
+<div
+  class="fx fx-dir-col charts-blocks"
+  [perfectScroll]
+  [suppressScrollX]="true"
+>
+  <div
+    class="bars-wrapper"
+    [envelopeSpinner]="!bars.length"
+    [spinnerType]="'dots'"
+    [spinnerColor]="'#939393'"
+    [spinnerSizeMultiplier]="2"
+  >
+    <div *ngFor="let bar of bars" class="bars-chart">
+      <horizontal-bar-chart
+        [data]="bar"
+        [options]="barOptions"
+        (barClicked)="onChartClick(bar, $event)"
+        (titleClicked)="onChartClick(bar)"
+      ></horizontal-bar-chart>
+    </div>
+  </div>
+</div>
+
+<chart-legend [legend]='legend' [label]="legendLabel"></chart-legend>

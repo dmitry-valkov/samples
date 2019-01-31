@@ -1,0 +1,58 @@
+<div
+  class="horizontal-bar-chart__wrap"
+  *ngIf="viewModel"
+>
+  <div
+    *ngIf="viewModel.options.showTitle"
+    class="horizontal-bar-chart__title fx fx-al-items-center"
+    [ngClass]="{'passive' : isOffLinks}"
+  >
+    <div class="bar-chart__left">
+      <span
+        class="title-text"
+        (click)="titleClick()"
+        [ngClass]="{ hovered: viewModel.options.titleClicking }"
+      >
+        <span
+          title="Project"
+          *ngIf="viewModel.data.project.name"
+        >
+          {{viewModel.data.project.name}}
+        </span>
+
+        <span *ngIf="viewModel.options.showTotal" class="text-xs text-pale">({{viewModel.data.total}})</span>
+      </span>
+    </div>
+
+    <div class="bar-chart__right">
+      <!---->
+    </div>
+  </div>
+
+  <div
+    class="horizontal-bar-chart"
+    [ngClass]="{'passive': isOffLinks}"
+  >
+    <ng-container *ngFor="let stage of viewModel.data.stages">
+      <div
+        class="bar hint--html hint--top-right show-animation"
+        *ngIf="viewModel.options.showPercent ? stage.percent : stage.count"
+
+        [style.min-width]="viewModel.options.showPercent ? '40px' : '25px'"
+        [ngStyle]="{'width': stage.percent + '%', 'background-color' : stage.color}"
+        [ngClass]="{ hovered: viewModel.options.barClicking }"
+
+        (click)="barClick(stage)"
+      >
+        <div class="fx bar-number-wrapper">
+          <div *ngIf="!viewModel.options.showPercent" class="bar-number">{{stage.count}}</div>
+          <div *ngIf="viewModel.options.showPercent" class="bar-number">{{stage.percent}}%</div>
+        </div>
+
+        <div class="hint__content">
+          <div class="ws-nowrap">{{stage.hintText}}</div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

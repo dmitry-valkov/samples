@@ -1,0 +1,48 @@
+@import '../../../../app-server/client/src/app/colors';
+
+.legend-label {
+
+}
+
+.legend-block {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  flex-wrap: wrap;
+
+  .legend-block-count {
+    color: $oc-indigo-6;
+    font-size: large;
+    padding-right: 5px;
+  }
+
+  .legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 12px;
+    pointer-events: none;
+
+    &.clickable {
+      cursor: pointer;
+      pointer-events: auto;
+
+      &:hover {
+        .color {
+          transform: scale(1.1);
+          transition: transform 300ms;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .color {
+      height: 20px;
+      width: 20px;
+      margin-right: 1em;
+    }
+  }
+}

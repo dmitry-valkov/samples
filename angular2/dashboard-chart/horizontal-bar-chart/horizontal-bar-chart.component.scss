@@ -1,0 +1,98 @@
+@import "../../../../app-server/client/src/app/colors";
+
+.horizontal-bar-chart__wrap{
+  &:hover{
+    .validate-link {
+      opacity: 1;
+    }
+  }
+
+  .icon {
+    padding-left: 10px;
+
+    i {
+      font-size: 17px;
+      color: #cacaca;
+
+      &:hover {
+        color: rgb(28, 123, 163)
+      }
+    }
+  }
+}
+
+.horizontal-bar-chart__title {
+  margin-bottom: 5px;
+  color: $oc-gray-6;
+  justify-content: space-between;
+
+  .bar-chart__left,
+  .bar-chart__right {
+    flex: 1 1 0;
+    display: flex;
+  }
+
+  .title-text {
+    text-transform: capitalize;
+
+    &.hovered {
+      span:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .bar-chart__right {
+    justify-content: flex-end;
+  }
+
+  .validate-link {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  &.passive {
+    pointer-events: none;
+  }
+}
+
+.horizontal-bar-chart {
+  height: 20px;
+  display: flex;
+  background-color: #f1f3f5;
+  cursor: pointer;
+
+  .bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: 0.25s ease-out;
+    background-color: transparent;
+    font-size: 12px;
+
+    .bar-number {
+      color: rgba(255,255,255,0.9);
+      margin-right: 5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &-wrapper{
+        max-width: 100%;
+      }
+    }
+
+    &.hovered:hover {
+      cursor: pointer;
+      transform: translateY(-3px);
+    }
+  }
+
+  &.passive {
+    pointer-events: none;
+  }
+}

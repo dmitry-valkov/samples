@@ -1,0 +1,17 @@
+<div *ngIf="label" class="legend-label">{{label}}</div>
+
+<div class="legend-block">
+  <div
+    *ngFor="let item of legend"
+    class="legend"
+    [ngClass]="{ clickable: clickable }"
+    (click)="legendClick(item)"
+    [attr.title]="item.name"
+  >
+    <div class="color" [ngStyle]="{'background-color': item.color}"></div>
+
+    <div class="legend-block-count">{{item.count}}</div>
+
+    <div class="text">{{item.name}}</div>
+  </div>
+</div>
