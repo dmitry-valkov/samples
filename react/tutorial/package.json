@@ -1,0 +1,35 @@
+{
+  "name": "react-tutorial",
+  "version": "1.0.0",
+  "description": "Just samples of code from any projects or simple FizzBuzz functionality.",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlcwalkoff/samples.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dlcwalkoff/samples/issues"
+  },
+  "homepage": "https://github.com/dlcwalkoff/samples#readme",
+  "dependencies": {
+    "@types/react": "^16.8.4",
+    "@types/react-dom": "^16.8.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.0"
+  }
+}
