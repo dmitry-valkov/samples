@@ -4,6 +4,7 @@
   "description": "Just samples of code from any projects or simple FizzBuzz functionality.",
   "private": true,
   "scripts": {
+    "test": "jest",
     "build": "webpack",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open"
@@ -25,10 +26,16 @@
     "react-dom": "^16.8.3"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.9.0",
+    "@types/jest": "^24.0.6",
     "awesome-typescript-loader": "^5.2.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "enzyme-to-json": "^3.3.5",
     "jest": "^24.1.0",
     "react-test-renderer": "^16.8.3",
     "source-map-loader": "^0.2.4",
+    "ts-jest": "^24.0.0",
     "typescript": "^3.3.3333",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
