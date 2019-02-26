@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Board should render correctly 1`] = `
+<div>
+  <div
+    className="status"
+  >
+    Next player: X
+  </div>
+  <div
+    className="board-row"
+  >
+    <Square
+      onClick={[Function]}
+      value={null}
+    />
+    <Square
+      onClick={[Function]}
+      value={null}
+    />
+    <Square
+      onClick={[Function]}
+      value={null}
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <Square
+      onClick={[Function]}
+      value={null}
+    />
+    <Square
+      onClick={[Function]}
+      value={null}
+    />
+    <Square
+      onClick={[Function]}
+      value={null}
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <Square
+      onClick={[Function]}
+      value={null}
+    />
+    <Square
+      onClick={[Function]}
+      value={null}
+    />
+    <Square
+      onClick={[Function]}
+      value={null}
+    />
+  </div>
+</div>
+`;
