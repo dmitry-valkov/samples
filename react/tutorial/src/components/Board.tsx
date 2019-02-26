@@ -2,13 +2,13 @@ import * as React from 'react';
 import { Square } from './Square';
 import { Winner } from '../classes/Winner';
 
-export interface BoardProps {
+export interface BoardState {
     squares: Array<string>,
     xIsNext: boolean,
 }
 
 export class Board extends React.Component {
-    public state: BoardProps = {
+    public state: BoardState = {
         squares: Array(9).fill(null),
         xIsNext: true,
     }
