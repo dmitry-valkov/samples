@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game should render correctly 1`] = `
+<div
+  className="game"
+>
+  <div
+    className="game-board"
+  >
+    <Board />
+  </div>
+  <div
+    className="game-info"
+  >
+    <div />
+    <ol />
+  </div>
+</div>
+`;
