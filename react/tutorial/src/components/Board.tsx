@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Square } from './Square';
-import { Winner } from '../classes/Winner';
+import { Winner, SquareValue } from '../classes/Winner';
 
 export interface BoardState {
-    squares: Array<string>,
+    squares: Array<SquareValue>,
     xIsNext: boolean,
 }
 

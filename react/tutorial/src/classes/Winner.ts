@@ -1,5 +1,7 @@
+export type SquareValue = string | null;
+
 export class Winner {
-    public static calculate(squares: Array<string>): string | null {
+    public static calculate(squares: Array<SquareValue>): SquareValue {
         const lines = [
             [0, 1, 2],
             [3, 4, 5],
