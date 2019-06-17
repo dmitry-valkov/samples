@@ -40,3 +40,19 @@ function(){
 ```
 
 ---
+
+```javascript
+['1', '7', '11'].map(parseInt); // [1, NaN, 3]
+```
+
+Максимально банальная вещь. Во-первых, [parseInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/parseInt) принимает **два** параметра - значение и основание системы счисления. Во-вторых, в callback функции `map` передается **три** параметра - [currentValue, index, array](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
+
+Соответвенно, по итогу код выполняется примерно так:
+
+```javascript
+parseInt('1', 1); // 1
+parseInt('7', 2); // NaN
+parseInt('11', 3); // 3
+```
+
+Что вновь привод к одной из прописных истин - **необходимо всегда указывать основание системы счисления при использовании функции parseInt**.
